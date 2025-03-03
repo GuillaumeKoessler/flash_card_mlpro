@@ -1,0 +1,1 @@
+print("Hello from init_db.py")
