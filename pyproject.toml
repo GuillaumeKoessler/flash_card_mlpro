@@ -1,5 +1,5 @@
 [project]
-name = "flash-card-mlpro"
+name = "flash_card_mlpro"
 version = "0.1.0"
 description = "Application de Flashcard"
 authors = [
@@ -9,6 +9,7 @@ license = {text = "Apache License"}
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "ipykernel (>=6.29.5,<7.0.0)"
 ]
 
 

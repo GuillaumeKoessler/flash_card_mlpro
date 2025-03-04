@@ -28,6 +28,7 @@ def get_card(id: int) -> tuple:
     """
     conn = sqlite3.connect("data/flashcards.db")
     c = conn.cursor()
+    c.execute("PRAGMA foreign_keys = ON;")
 
     query = """
         SELECT 
@@ -58,6 +59,7 @@ def update_card(
 
     conn = sqlite3.connect("data/flashcards.db")
     c = conn.cursor()
+    c.execute("PRAGMA foreign_keys = ON;")
 
     query = """
         UPDATE 
@@ -86,12 +88,13 @@ def delete_card(id: int) -> bool:
 
     conn = sqlite3.connect("data/flashcards.db")
     c = conn.cursor()
+    c.execute("PRAGMA foreign_keys = ON;")
 
     query = """
         DELETE FROM cards WHERE id = ?;
     """
 
-    c.execute(query, (id))
+    c.execute(query, (id,))
     conn.commit()
 
     conn.close()
@@ -105,6 +108,7 @@ def get_all_cards() -> list:
     """
     conn = sqlite3.connect("data/flashcards.db")
     c = conn.cursor()
+    c.execute("PRAGMA foreign_keys = ON;")
 
     query = """
         SELECT 
@@ -132,6 +136,7 @@ def get_number_of_cards() -> int:
 
     conn = sqlite3.connect("data/flashcards.db")
     c = conn.cursor()
+    c.execute("PRAGMA foreign_keys = ON;")
 
     query = """
         SELECT 
@@ -160,6 +165,7 @@ def get_cards_by_theme(id_theme: int) -> list:
 
     conn = sqlite3.connect("data/flashcards.db")
     c = conn.cursor()
+    c.execute("PRAGMA foreign_keys = ON;")
 
     query = """
         SELECT 
