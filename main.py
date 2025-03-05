@@ -2,15 +2,23 @@ import sqlite3
 
 from src import crud_cards
 from src import crud_theme
+from src import stats
 
-crud_theme.create_theme("Slip")
+stats.update_stats(1)
 
-crud_theme.get_theme(7)
+stats.update_stats(0)
 
-crud_theme.update_theme(id_theme=6, theme="Calecon")
+# conn = sqlite3.connect("data/flashcards.db")
+# c = conn.cursor()
 
-crud_theme.get_theme(6)
+# c.execute(
+#     """
+#     INSERT INTO cards (question, reponse, probabilite, id_theme)
+#     VALUES ("Je mesure quelle taille ?", "1m69", 0.5, 4)
+#     """
+# )
+# conn.commit()
+# conn.close()
 
-crud_theme.delete_theme(7)
-
-crud_theme.get_all_themes()
+stats.update_card_probability(card_id=1, is_correct=1)
+stats.get_stats()
