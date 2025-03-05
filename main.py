@@ -1,11 +1,16 @@
 import sqlite3
 
 from src import crud_cards
+from src import crud_theme
 
-crud_cards.create_card(
-    question="Je mesure combien ?", reponse="1m69", probabilite=0.7, id_theme=4
-)
+crud_theme.create_theme("Slip")
 
-crud_cards.delete_card(id=5)
+crud_theme.get_theme(7)
 
-test = crud_cards.get_all_cards()
+crud_theme.update_theme(id_theme=6, theme="Calecon")
+
+crud_theme.get_theme(6)
+
+crud_theme.delete_theme(7)
+
+crud_theme.get_all_themes()
